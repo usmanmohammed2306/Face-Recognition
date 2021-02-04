@@ -14,6 +14,26 @@ Built using [Facenet](https://github.com/davidsandberg/facenet)'s state-of-the-a
 
 - You need Python(2.6 to 3.5) installed
 
+### Setup
+
+1. Create following files in your project directory:
+    - input_images
+    - aligned_images
+    - my_classifier
+    - pretrained_facenet_model
+    
+2. Create input directory(input_images) in the following order.
+    ```
+    input_images
+    |
+    |--Person1
+    |  |--Person1_001.jpg
+    |  |--Person1_002.jpg
+    |--Person2
+    |  |--Person2_001.jpg
+    |   |--Person2_002.jpg
+    ```
+
 ## Let's Begin
 
 #### For Facial Recognition we need to align images as follows:
@@ -23,6 +43,11 @@ import facenet_recognition
 facenet_recognition.align_input('input_images','aligned_images')
 ```
 *Above command will create our input images into aligned format and save it in given aligned images folder*
+
+#### Creating pre-trained model and trained classifier
+
+You can create pre-trained model(will be saved in pretrained_facenet_model file) using code from the following link: https://github.com/davidsandberg/facenet/blob/master/src/train_tripletloss.py.
+You can create trained classifer(will be saved in my_classifier file) of your pre-trained model using code from the following link: https://github.com/davidsandberg/facenet/blob/master/src/classifier.py.
 
 #### Train & Test Classifier on Images
 After we have aligned images now we can train our classifier.
